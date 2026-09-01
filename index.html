@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container" id="parent-listener">
+      <div id="countdown-time-session" style="display: block"><h1>25:00</h1></div>
+      <div id="countdown-time-break" style="display: none"> <h1>5:00</h1></div>
+      <div id="display-event"></div>
+      <div id="controlling-section">
+        <div>
+          <h4>Session Time</h4>
+          <span id="displaySessionTime">25 min</span>
+          <div>
+            <button id="decrease-sessionTime">-</button>
+            <button id="increase-sessionTime">+</button>
+          </div>
+        </div>
+        <div>
+          <h4>Break Time</h4>
+          <span id="displayBreakTime">5 min</span>
+          <div>
+            <button id="decrease-breakTime">-</button>
+            <button id="increase-breakTime">+</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button id="pause-button">Pause</button>
+        <button id="resume-button">Resume</button>
+        <button id="start-button">Start</button>
+        <button id="reset-button">Reset</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #0d0f12;
+  color: #f5f5f5;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.container {
+  position: relative;
+
+  width: 360px;
+  min-height: 540px;
+
+  padding: 35px;
+
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  gap: 30px;
+
+  text-align: center;
+
+  background: #171a1f;
+
+  border: 1px solid #292e36;
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================
+   TIMER
+========================= */
+
+#countdown-time-session,
+#countdown-time-break {
+  min-height: 220px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*
+    Give the timer enough horizontal
+    breathing room.
+  */
+  padding: 0 5px;
+}
+
+#countdown-time-session h1,
+#countdown-time-break h1 {
+  font-family: "Bebas Neue", sans-serif;
+
+  /*
+    25:00 looks large,
+    while longer values stay inside
+    the card.
+  */
+  font-size: 120px;
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: 2px;
+
+  color: #f4f4f4;
+
+  text-shadow: 0 0 35px rgba(255, 255, 255, 0.08);
+
+  white-space: nowrap;
+
+  /*
+    IMPORTANT:
+    Don't hide the text.
+    Let the container control the space.
+  */
+  overflow: visible;
+}
+
+/*
+   When the timer becomes something like:
+
+   1:01:00
+   1:59:00
+   10:00:00
+
+   the text naturally has more characters,
+   so we use a smaller maximum width.
+*/
+#countdown-time-session h1,
+#countdown-time-break h1 {
+  transform: scaleX(0.9);
+}
+
+/* =========================
+   TIME CONTROLS
+========================= */
+
+#controlling-section {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+#controlling-section > div {
+  padding: 18px 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  background: #1e2228;
+
+  border: 1px solid #2a3038;
+  border-radius: 18px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#controlling-section > div:hover {
+  background: #21262d;
+  border-color: #343a43;
+}
+
+/* =========================
+   TIME LABELS
+========================= */
+
+#controlling-section h4 {
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  color: #8f98a5;
+}
+
+#controlling-section span {
+  font-family: "Bebas Neue", sans-serif;
+
+  font-size: 28px;
+
+  color: #ffffff;
+}
+
+/* =========================
+   +/- BUTTONS
+========================= */
+
+#controlling-section > div > div {
+  display: flex;
+
+  gap: 8px;
+}
+
+#controlling-section button {
+  width: 34px;
+  height: 30px;
+
+  padding: 0;
+
+  border: 1px solid #343a43;
+  border-radius: 8px;
+
+  background: #272c33;
+  color: #dce1e7;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+#controlling-section button:hover {
+  background: #323841;
+
+  border-color: #454c57;
+
+  color: #ffffff;
+}
+
+#controlling-section button:active {
+  transform: scale(0.9);
+}
+
+/* =========================
+   START / RESET / PAUSE / RESUME
+========================= */
+
+#start-button,
+#reset-button,
+#resume-button,
+#pause-button {
+  border: none;
+
+  padding: 13px 25px;
+
+  border-radius: 12px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* =========================
+   START
+========================= */
+
+#start-button {
+  background: #f2f2f2;
+
+  color: #111318;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#start-button:hover {
+  background: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+#start-button:active {
+  transform: scale(0.96);
+}
+
+/* =========================
+   RESET
+========================= */
+
+#reset-button {
+  background: transparent;
+
+  color: #8f98a5;
+
+  border: 1px solid #343a43;
+}
+
+#reset-button:hover {
+  color: #ffffff;
+
+  border-color: #555d68;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  transform: translateY(-2px);
+}
+
+#reset-button:active {
+  transform: scale(0.96);
+}
+
+/* =========================
+   PAUSE / RESUME
+   Hidden for now
+========================= */
+
+#pause-button,
+#resume-button {
+  display: none;
+
+  background: #272c33;
+
+  color: #dce1e7;
+
+  border: 1px solid #343a43;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#pause-button:hover,
+#resume-button:hover {
+  background: #323841;
+
+  border-color: #4a525e;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#pause-button:active,
+#resume-button:active {
+  transform: scale(0.96);
+}
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.container > div:last-child {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 400px) {
+  .container {
+    width: calc(100vw - 30px);
+
+    padding: 25px;
+
+    gap: 25px;
+  }
+
+  #countdown-time-session,
+  #countdown-time-break {
+    min-height: 200px;
+  }
+
+  #countdown-time-session h1,
+  #countdown-time-break h1 {
+    font-size: 100px;
+
+    letter-spacing: 1px;
+
+    transform: scaleX(0.85);
+  }
+}
