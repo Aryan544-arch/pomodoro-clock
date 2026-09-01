@@ -2,7 +2,7 @@ Pomodoro Clock
 
 A responsive Pomodoro Clock built with HTML, CSS, and JavaScript to practice JavaScript fundamentals and build a functional frontend project.
 
-🔗 Live Demo: [Add your GitHub Pages link here]
+🔗 Live Demo: https://aryan544-arch.github.io/pomodoro-clock/
 
 ✨ Features
 
