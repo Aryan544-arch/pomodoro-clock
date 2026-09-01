@@ -53,7 +53,7 @@ parentListner.addEventListener("click", (event) => {
         breakTime--;
         if (breakTime < 61) {
           displayBreakTime.innerText = `${breakTime} Min`;
-          countDownTimeSession.querySelector("h1").innerText =
+          countDownTimeBreak.querySelector("h1").innerText =
             `${breakTime}:00`;
         } else {
           let hours = Math.floor(breakTime / 60);
@@ -71,7 +71,7 @@ parentListner.addEventListener("click", (event) => {
       breakTime++;
       if (breakTime < 61) {
         displayBreakTime.innerText = `${breakTime} Min`;
-        countDownTimeSession.querySelector("h1").innerText = `${breakTime}:00`;
+        countDownTimeBreak.querySelector("h1").innerText = `${breakTime}:00`;
       } else {
         let hours = Math.floor(breakTime / 60);
         let minutes = Math.floor(breakTime % 60);
